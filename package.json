@@ -1,0 +1,19 @@
+{
+  "name": "sendshopifyemails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "locally": "node -e \"require('./handler').main(event);\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "googleapis": "^39.2.0",
+    "handlebars": "^4.7.6",
+    "nodemailer": "^6.4.6"
+  }
+}

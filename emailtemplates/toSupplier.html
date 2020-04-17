@@ -1,0 +1,86 @@
+Hi Sales
+<br>
+<br>Can I place the following order;</br>
+<br>Account Name &ndash; Ruby's Garden Boutique</br>
+<br>Name &ndash; Sam Sale</br>
+<br><br><u>Order</u>
+<table border="1" style="border-collapse:collapse">
+  <tbody>
+    <tr>
+      <td>
+        <b>Item</b>
+      </td>
+      <td>
+        <b>SKU</b>
+      </td>
+      <td>
+        <b>Quantity</b>
+      </td>
+    </tr>
+    {{#each line_items}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{ escape sku}}</td>
+        <td>{{quantity}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<p><u>Delivery Details</u></p>
+<table border="1" style="border-collapse:collapse">
+  <tbody>
+    <tbody>
+  <tr>
+    <td>
+      <b>Key</b>
+    </td>
+    <td>
+      <b>Value</b>
+    </td>
+  </tr>
+    <tr>
+      <td>Delivery Name</td>
+      <td>{{ upperCaseFirstLetter shipping_address.first_name}} {{ upperCaseFirstLetter shipping_address.last_name}}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>
+      {{ shipping_address.address1 }},
+      {{#if shipping_address.address2}}
+      {{ shipping_address.address2 }},
+      {{/if}}
+      {{#if shipping_address.city }}
+      {{ shipping_address.city }},
+      {{/if}}
+      {{#if shipping_address.province }}
+      {{ shipping_address.province }},
+      {{/if}}
+      {{#if shipping_address.zip }}
+      {{ shipping_address.zip }},
+      {{/if}}
+      {{#if shipping_address.country }}
+      {{ shipping_address.country }}
+      {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <td>Phone Number</td>
+      <td>{{ shipping_address.phone }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ customer.email }}</td>
+    </tr>
+    <tr>
+      <td>Note</td>
+      <td>
+        <ul>
+        <li>Please can you supply Sam the tracking details when dispatched?</li>
+        {{#if note}}
+        <li>{{ note }}</li>
+      {{/if}}
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
