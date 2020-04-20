@@ -1,11 +1,14 @@
-module.exports =  (vendor) =>{
-  switch(vendor) {
+module.exports = (vendor) => {
+  switch (vendor) {
+    case 'Glatz':
+      return 'richard@aelsolutions.com'
+      break;
     case 'Amazonas':
     case 'Alba Krapf':
       return 'office@laminvale.co.uk'
       break;
-  default:
-    return 'sales@europaleisure.co.uk'
+    default:
+      return 'sales@europaleisure.co.uk'
   }
 
 }
